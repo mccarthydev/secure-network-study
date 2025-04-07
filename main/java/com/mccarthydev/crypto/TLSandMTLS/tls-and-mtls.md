@@ -35,15 +35,46 @@ During the TLS handshake, the user's device and the web server:
 * Authenticate the identity of the server using the server's TLS certificate
 * Generate session keys for encrypting messages between them after the handshake is complete
 
-### Execise
+### Execise Notes
 
-https://www.baeldung.com/java-ssl
+* **Sockets in Java**
+    * The most simple form of a server in Java can be created using `ServerSocket` and `Socket` classes as seen in [SimpleClient](/main/java/com/mccarthydev/crypto/TLSandMTLS/SimpleClient.java) and [SimpleServer](/main/java/com/mccarthydev/crypto/TLSandMTLS/SimpleServer.java)
+    * Use `PrintWriter` for writing between sockets, easier to use
+    * You can connect sockets, reading and writing with input and output streams
 
-**Extra:** 
+* **Secure Sockets - Server Side**
 
-* Factory design pattern: https://www.baeldung.com/java-factory-pattern
+    * **KeyManagerFactory**
+        * `KeyManagerFactory` is a Java class responsible for managing the key material (such as private keys) used in the SSL/TLS handshake process.
+        * Notice when init SSL Context for server side `tm` is `null`
 
-### Chat GPT Proposed Project
+* **Secure Sockets - Client Side**
+
+    * **TrustManagerFactory**
+        * The `TrustManagerFactory` is used to manage and provide trusted certificates for client verification. It is used on the client side of a secure connection to verify the identity of the server, ensuring that the server the client is connecting to is trusted
+        * Notice when init SSL Context for client side `km` is `null`
+
+* **Secure Sockets - Shared Server/Client**
+
+    * **Key Store/Trust store**
+        * Has different names between server and client but implemented the same way
+        * Keystore: is a storage facility (usually a file or a database) that holds cryptographic keys and certificates, often used for establishing secure communication
+        * Stores private keys and their associated certificates (for example, the server's private key used for SSL/TLS encryption)
+        * PKCS12 > Common format for keystores, often used for interoperability with other systems
+        * Can store:
+            * Private keys (for signing or decryption).
+            * Public keys (for encryption or verification).
+            * X.509 certificates (public-key certificates that help authenticate entities).
+        * Exists both in Client and Server side
+
+    * **SSL Context**
+        * The `SSLContext` is a Java object that manages the secure communication aspects, such as encryption, key management, and certificate validation
+        *  In short, this sets up a context for managing SSL/TLS connections
+        * Comparing to how servers are created using `ServerSocket` and `Socket` classes it's easier to understand TLS and secure sockets in Java in general when doing the reserve engineering from `SSLServerSocket` and all classes necessary prior to create this socket
+
+
+
+### Execise - Chat GPT Proposed Project
 
 **Prompt:**
 

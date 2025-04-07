@@ -19,7 +19,7 @@ import javax.net.ssl.TrustManagerFactory;
 
 public class SSLClient {
     public static void main(String[] args) throws KeyStoreException, FileNotFoundException, IOException, NoSuchAlgorithmException, CertificateException, KeyManagementException {
-                // Load the truststore (we are trusting the server's certificate)
+        // Load the truststore (we are trusting the server's certificate)
         char[] password = "password".toCharArray(); // Password for the truststore
         KeyStore trustStore = KeyStore.getInstance("PKCS12");
         FileInputStream trustStoreStream = new FileInputStream("keystore.p12");
