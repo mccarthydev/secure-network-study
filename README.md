@@ -46,3 +46,21 @@
 2. **mTLS with Java:**
     * Configure both server and client to require client certificates (mTLS).
     * Create a secure communication scenario where the server verifies the client's identity.
+
+**3. Working with Certificates and Certificate Authorities (CAs)**
+
+**Topics to cover:**
+
+* Understanding digital certificates, certificate authorities (CAs), and their role in TLS.
+* How to create and use certificates in Java.
+* Certificate validation and trust chains.
+* Using Java’s KeyFactory, X509Certificate, and TrustManager for certificate handling.
+
+**Practical Exercises:**
+
+1. **Creating and managing certificates:**
+    * Generate a self-signed certificate using keytool.
+    * Implement a Java client and server using certificates for authentication and encryption.
+2. **Validating certificates:**
+    * Implement a certificate validation mechanism using Java's TrustManager to ensure that the server certificate is trusted.
+    * Create a system that uses CA certificates for authentication and encryption.
