@@ -64,3 +64,20 @@
 2. **Validating certificates:**
     * Implement a certificate validation mechanism using Java's TrustManager to ensure that the server certificate is trusted.
     * Create a system that uses CA certificates for authentication and encryption.
+
+**4. JWS, JWT and JWE**
+
+**Topics to cover:**
+
+* What is JWT (JSON Web Token)? Structure of JWT: Header, Payload, and Signature.
+* Difference between JWE (JSON Web Encryption) and JWS (JSON Web Signature).
+* How to sign and verify JWTs, and encrypt/decrypt JWE.
+
+**Practical Exercises:**
+
+1. **JWT Implementation with Java:**
+    * Use Java libraries like jjwt or Java JWT to generate and parse JWTs.
+    * Create a REST API that generates a signed JWT after authenticating the user.
+2. **JWE and JWS Example:**
+    * Implement JWT with both signature (JWS) and encryption (JWE) in Java.
+    * Create a system where a server issues a signed and encrypted token and the client can decrypt and verify it.
